@@ -187,7 +187,11 @@
                 </div>
                 <div class="col-12 col-md-3">
                   <button type="submit" class="btn btn-block btn-lg btn-primary">
-                      <a style="color:white" href="http://www.naver.com" onClick="gtag(‘event’, ‘ PDF Downloads’, ‘Click’, ‘SEO For Beginners’);">Free eBook</a></button>
+                      <a style="color:white" href="http://www.naver.com" 
+                         onClick="gtag(‘event’, ‘PDF Downloads’,{
+                                  'event_category': 'Ebook','event_label': 'Download','value': 1
+                                  });">
+                        Free eBook</a></button>
                 </div>
               </div>
             </form>
