@@ -61,7 +61,7 @@
                   <input type="email" class="form-control form-control-lg" placeholder="Enter your email...">
                 </div>
                 <div class="col-12 col-md-3">
-                    <button type="submit" onclick="ga('send', 'event', 'test', 'test', 'test');" class="btn btn-block btn-lg btn-primary" >
+                    <button type="submit" onclick="gtag('event', 'sign_up', { method : 'githubPage' });" class="btn btn-block btn-lg btn-primary" >
                       Sign up! 
                     </button>
                 </div>
@@ -187,9 +187,7 @@
                 </div>
                 <div class="col-12 col-md-3">
                   <button type="submit" class="btn btn-block btn-lg btn-primary">
-                      <a style="color:white" href="http://www.naver.com" 
-                         onClick="ga(‘send’, ‘event’, ‘ PDF Downloads’, ‘Click’, ‘SEO For Beginners’);">Free eBook</a></button>
-                </div>
+                      <a style="color:white" href="http://www.naver.com" onClick="gtag(‘event’, ‘ PDF Downloads’, ‘Click’, ‘SEO For Beginners’);">Free eBook</a></button>
                 </div>
               </div>
             </form>
