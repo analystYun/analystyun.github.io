@@ -12,6 +12,15 @@
 
   gtag('config', 'UA-118610940-1');
 </script>
+    
+    
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MFHVXVJ');</script>
+<!-- End Google Tag Manager -->
       
       
     <meta charset="utf-8">
@@ -35,7 +44,51 @@
   </head>
 
   <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MFHVXVJ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    
+    
+    
+    <script style= display:'none'>
+    gtag('event','test', {
+        'non_interaction': true
+    });
 
+// Measures product impressions and also tracks a standard
+// pageview for the tag configuration.
+// Product impressions are sent by pushing an impressions object
+// containing one or more impressionFieldObjects.
+dataLayer.push({
+  'ecommerce': {
+    'currencyCode': 'EUR',                       // Local currency is optional.
+    'impressions': [
+     {
+       'name': 'Triblend Android T-Shirt',       // Name or ID is required.
+       'id': '12345',
+       'price': '15.25',
+       'brand': 'Google',
+       'category': 'Apparel',
+       'variant': 'Gray',
+       'list': 'Search Results',
+       'position': 1
+     },
+     {
+       'name': 'Donut Friday Scented T-Shirt',
+       'id': '67890',
+       'price': '33.75',
+       'brand': 'Google',
+       'category': 'Apparel',
+       'variant': 'Black',
+       'list': 'Search Results',
+       'position': 2
+     }]
+  }
+});
+</script>
+    
+    
     <!-- Navigation -->
     <nav class="navbar navbar-light bg-light static-top">
       <div class="container">
@@ -61,8 +114,9 @@
                   <input type="email" class="form-control form-control-lg" placeholder="Enter your email...">
                 </div>
                 <div class="col-12 col-md-3">
-                  <button type="submit" onclick="window.open('http://www.da-hub.net/?utm_source=gatest&utm_medium=gatest')" class="btn btn-block btn-lg btn-primary" >Sign up!
-                    <a onclick="ga('send', 'event', 'test', 'test', 'test')"></a>
+                    <button type="submit" onclick="gtag('event', 'sign_up', { method : 'githubPage' });" 
+                            class="btn btn-block btn-lg btn-primary">
+                       Sign up!
                     </button>
                 </div>
               </div>
@@ -71,10 +125,27 @@
         </div>
       </div>
     </header>
+    
+    
+<!-- 투표 임시 -->
 
+    
+    
     <!-- Icons Grid -->
     <section class="features-icons bg-light text-center">
       <div class="container">
+                  <div class="vote">
+          <form id="vote" action="/ga_example/vote.html">
+          <input type="radio" name="title" value="1번" onclick="gtag('event', test, {'event_catagory': test});" >
+            Google Analytics Bootcamp: Beginner<br>
+          <input type="radio" name="title" value="2번">   Google Analytics Bootcamp: 초급<br>
+          <input type="radio" name="title" value="3번">   마케팅 데이터 분석하기: Google Analytics 기초<br>
+          <input type="radio" name="title" value="4번">   GA: 기초부터 활용까지 - 기초편<br><br>
+          <a onclick="gtag('event', '제출', {'event_catagory': '제출하기' });">
+            <input type="submit" value="제출하기">
+             </a>
+            </form>
+          </div>
         <div class="row">
           <div class="col-lg-4">
             <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
@@ -186,7 +257,12 @@
                   <input type="email" class="form-control form-control-lg" placeholder="Enter your email...">
                 </div>
                 <div class="col-12 col-md-3">
-                  <button type="submit" class="btn btn-block btn-lg btn-primary">Sign up!</button>
+                  <button type="submit" class="btn btn-block btn-lg btn-primary">
+                      <a style="color:white" href="http://www.da-hub.net/?utm_source=gaExample&utm_medium=gaExample&utm_campaign=Free_Ebook" 
+                         onClick="gtag(‘event’, ‘PDF Downloads’,{
+                                  'event_category': 'Ebook','event_label': 'Download','value': 1
+                                  });">
+                        Free eBook</a></button>
                 </div>
               </div>
             </form>
