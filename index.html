@@ -102,9 +102,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </header>
     
     
-<!-- 투표 임시 -->
+<!-- 투표 custom dimension and metrics -->
 
-    
+    gtag('config', 'UA-118610940-1', {
+   'custom_map': {
+     'dimension1': 'voteResult', 
+     'metric1': 'voteNumber'
+   }
+});
+
+gtag('event', '투표하세요', {'voteResult': value });
     
     <!-- Icons Grid -->
     <section class="features-icons bg-light text-center">
@@ -112,7 +119,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   <div class="vote">
           <form id="vote" action="/vote.html">
             <h4> 가장 알고 싶은(혹은 어려운) 내용의 번호에 투표해 주세요. </h4><br>
-          <input type="radio" name="title" value="1번">   Google Analytics: '이벤트' 설정하기 <br>
+          <input type="radio" name="title" value="1번" onclick="gtag('event', '투표하세요', {'voteNumber': 1});">   Google Analytics: '이벤트' 설정하기 <br>
           <input type="radio" name="title" value="2번">   Google Analytics: 매출 데이터 분석하기 <br>
           <input type="radio" name="title" value="3번">   Google Analytics: 맞춤항목 활용하기 <br>
           <input type="radio" name="title" value="4번">   Google Analytics: 향상된 전자상거래 설치하기 <br>
@@ -124,6 +131,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
              </a>
             </form><br><br><br>
           </div>
+        
+        
         <div class="row">
           <div class="col-lg-4">
             <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
