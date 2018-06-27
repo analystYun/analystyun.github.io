@@ -116,7 +116,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="vote" >
           <form id="vote" action="/vote.html">
             <div><h4> 가장 알고 싶은(혹은 어려운) 내용의 번호에 투표해 주세요. </h4><br></div>
-          <input type="radio" name="title" value="1번" onclick="gtag('event', '투표하세요', {'voteNumber': 1});" checked>
+          <input type="radio" name="title" value="1번" onclick="gtag('event', '투표하세요', {'voteNumber': 1});">
             Google Analytics: '이벤트' 설정하기 <br>
           <input type="radio" name="title" value="2번" onclick="gtag('event', '투표하세요', {'voteResult' : 2번});">
             Google Analytics: 매출 데이터 분석하기 <br>
@@ -130,7 +130,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             GA & Adwords: 애널리틱스와 애드워즈 200% 활용 <br>
             <br>
             <input type="button" id="submit" 
-                   onclick="gtag('event', '제출', {'event_catagory': '제출하기', 'event_label': document.location.href });">
+                   onclick="gtag('event', '제출', {'event_catagory': '제출하기'});">
               제출하기
             </form><br><br><br>
           </div>
