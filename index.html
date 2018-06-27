@@ -108,16 +108,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
 <!-- 투표 custom dimension and metrics -->
 
-      
-var myFunction(){
- 
-     };
-     </script>
+     
     
     <!-- Icons Grid -->
     <section class="features-icons bg-light text-center">
       <div class="container">
-                  <div class="vote" >
+          <div class="vote" >
           <form id="vote" action="/vote.html">
             <div><h4> 가장 알고 싶은(혹은 어려운) 내용의 번호에 투표해 주세요. </h4><br></div>
           <input type="radio" name="title" value="1번" onclick="gtag('event', '투표하세요', {'voteNumber': 1});" checked>
@@ -133,8 +129,8 @@ var myFunction(){
           <input type="radio" name="title" value="6번">
             GA & Adwords: 애널리틱스와 애드워즈 200% 활용 <br>
             <br>
-            <button type="button" id="submit" onclick=" gtag('event', '제출', {'event_catagory': '제출하기', 'event_label': voteVal });">
-              제출하기</button>
+            <input type="button" id="submit" onclick=" gtag('event', '제출', {'event_catagory': '제출하기', 'event_label': document.location.href });">
+              제출하기
             </form><br><br><br>
           </div>
         
