@@ -85,7 +85,16 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
       'voteResult': '테스트',
       'voteNumber': 123
     });
+    
+    
+    var pageInfo = {
+      name: 'adobe test page',
+      date: 'i dont know'
+    }
+       
+    dataLayer.push(pageInfo)
   </script>
+  
   <!-- Navigation -->
   <nav class="navbar navbar-light bg-light static-top">
     <div class="container">
