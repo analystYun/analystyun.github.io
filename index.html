@@ -38,11 +38,6 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
       }
     });
     
-      var _dl ={
-      name :  "adobe test page - ok"
-  };
-    
-    _satellite.track("commTest",{name:"dl-test-name"})
   </script>
 
     <!-- Google Tag Manager -->
@@ -87,6 +82,13 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
   <!-- End Google Tag Manager (noscript) -->
 
   <script style=display:'none'>
+          var _dl ={
+      name :  "adobe test page - ok"
+  };
+    
+    _satellite.track("commTest",{name:"dl-test-name"})
+    
+    
     gtag('event', 'pageview_test', {
       'event_catagory': 'pageview_TEST',
       'non_interaction': true,
