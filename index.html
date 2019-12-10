@@ -89,6 +89,8 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
     });
     
     var dataLayerEx = [];
+    
+    
     var pageInfo = {
       name: 'adobe test page - ok',
       type:'pageInfo.type - ok',
@@ -102,9 +104,9 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
     
     dataLayerEx.push(hkObj)
     
-  var _dl = {};
+  var _dl = pageInfo;
     
-    _satellite.track("commTest", pageInfo)
+    _satellite.track("commTest", { pageInfo.name : 'nothing'})
   
   </script>
   
