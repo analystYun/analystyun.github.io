@@ -107,7 +107,7 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
     
    // pageInfo2 = {name:'testName',type:'testType',category:'testCate'}
 
-   _satellite.track("commTest", {name:"testName",type:"testType",category:"testCate"} )
+   function sTrack(){ _satellite.track("commTest", {name:"testName",type:"testType",category:"testCate"} )}
     
       
   </script>
@@ -126,8 +126,8 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
         ;
       </style>
       <div class="relative_top">
-        <a href="https://analystyun.github.io/dashboard">
-          <button type="dashboard" data-icon="arrow-r" class="btn btn-primary" style="background-color:#20B2AA; border-color:#20B2AA">
+        <!--<a href="https://analystyun.github.io/dashboard">-->
+          <button type="dashboard" data-icon="arrow-r" onclick="sTrack()" class="btn btn-primary" style="background-color:#20B2AA; border-color:#20B2AA">
             대시보드 보기
           </button>
       </div>
