@@ -127,7 +127,7 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
       </style>
       <div class="relative_top">
         <!--<a href="https://analystyun.github.io/dashboard">-->
-          <button type="dashboard" data-icon="arrow-r" onclick="sTrack()" class="btn btn-primary" style="background-color:#20B2AA; border-color:#20B2AA">
+          <button type="dashboard" data-icon="arrow-r" onclick="sTrack()" click-area="GNB" click-data="대시보드" class="btn btn-primary" style="background-color:#20B2AA; border-color:#20B2AA">
             대시보드 보기
           </button>
       </div>
@@ -154,7 +154,7 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
                 <input type="email" class="form-control form-control-lg" placeholder="Enter your email...">
               </div>
               <div class="col-12 col-md-3">
-                <button type="submit" onclick="gtag('event', 'sign_up', { method : 'githubPage' });" class="btn btn-block btn-lg btn-primary">
+                <button type="submit" click-area="MAIN" click-data="Submit" onclick="gtag('event', 'sign_up', { method : 'githubPage' });" class="btn btn-block btn-lg btn-primary">
                   Sign up!
                 </button>
               </div>
@@ -179,7 +179,7 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
           Google Analytics: '이벤트' 설정하기 <br>
           <input type="radio" name="title" value="2번" onclick="gtag('event', '투표하세요', {'voteResult' : '2번'});">
           Google Analytics: 매출 데이터 분석하기 <br>
-          <input type="radio" name="title" value="3번">
+          <input type="radio" name="title" value="3번" click-area="body" click-data="3번">
           Google Analytics: 맞춤항목 활용하기 <br>
           <input type="radio" name="title" value="4번">
           Google Analytics: 향상된 전자상거래 설치하기 <br>
