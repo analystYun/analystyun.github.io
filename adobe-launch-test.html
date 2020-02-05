@@ -29,9 +29,8 @@
 </head>
 
 <body>
-  <script style=display:'none'>
+  <script id="adobe-test" style=display:'none'>
     var dataLayerEx = [];   
-    
     var pageInfo = {
       name: 'adobe test page - ok',
       type:'pageInfo.type - ok',
@@ -50,6 +49,47 @@
 
    function sTrack(){ _satellite.track("commTest", {name:"testName",type:"testType",category:"testCate"} )}
     
+    
+    var _dl = {
+    /* Page 공통 영역 Script 추가 */
+
+    /* 추가 */
+    products : [
+        {
+            trip_category : '카테고리',  // 예시) 여정-동남아
+            trip_type : '여정타입', // 여정 타입 - 왕복/편도/다구간
+            trip_passengerNum : '전체탑승객 수', // 숫자
+            trip_passengerInfo : '탑승객 정보', // 예시) 탑승객 - 성인2,소아1,유아0 -> '2-1-0' 값 입력
+            trip_segment : '여정 구간', // 예시) 왕복일 경우: ICN-BKK | BKK-ICN, 편도일 경우: 'ICN-BKK |' 입력, 리턴부분 공백으로 처리
+            trip_date :'여정일자', // 예시) 2020.01.01 | 2020.01.07, 편도는 '2020.01.01 |' 입력, 리턴부분 공백으로 처리
+            trip_depTime : '현지 출발시간', // 예시) 08:30 | 19:40, 편도는 '08:30 |' 입력, 리턴부분 공백으로 처리
+            trip_flightNumber : '편명', // 예시) LJ301 | LJ302, 편도는 'LJ301 |' 입력, 리턴부분 공백으로 처리
+            trip_bookingClass : '좌석 구분', // 예시) P-슈퍼로우 | Q-플렉스, 알파벳: 좌석클래스 / 슈퍼로우: 운임명칭
+            trip_bundleName : '번들 종류', // 예시) 베이직 | 스마트, 번들종류 (step2, 이름기준)
+            trip_bundlePrice : '번들 금액', // 예시) '7000 | 30000', 편도는 '7000 |' 입력, 리턴부분 공백으로 처리
+            trip_ticketPrice: '구간별 항공운임', // 예시) '140000 | 120000', 편도는 '140000 |' 입력, 리턴부분 공백으로 처리
+            trip_purchase_channel : '외부채널유무' // 예시) 티켓을 구매한 채널 구분값,  외부채널(진에어 홈페이지 제외) : Y, 내부채널(진에어 홈페이지) : N
+        },{
+            /* 예시 : 성인2명, ICN-BKK 왕복 여정, 부가서비스 좌석/수화물/기내식 추가 경우 (그 외는 가이드 참고) */
+
+            // 예시 - 부가서비스 - 좌석정보
+            trip_category : '부가서비스-SEAT', // 여정카테고리 = 부가서비스-SEAT
+            trip_seg_detail : 'ICN-BKK', // 여정상세
+            trip_seat : '29D',   // 좌석번호
+            trip_seatPrice : 15000, // 좌석 추가금액, 번들 선택하거나 금액이 없을경우 '0'으로 처리
+            trip_passenger : '성인1'  // 승객 상세
+        },{
+            // 예시 - 부가서비스 - 좌석정보
+            trip_category : '부가서비스-SEAT', // 여정카테고리 = 부가서비스-SEAT
+            trip_seg_detail : 'ICN-BKK', // 여정상세
+            trip_seat : '29E',   // 좌석번호
+            trip_seatPrice : 15000, // 좌석 추가금액, 번들 선택하거나 금액이 없을경우 '0'으로 처리
+            trip_passenger : '성인2'  // 승객 상세
+        }]
+    }
+
+
+   
       
   </script>
   
@@ -84,7 +124,7 @@
       <div class="row">
         <div class="col-xl-9 mx-auto">
           <h1 class="mb-5">
-            <a class="go-to-example-page" style="color:white" href="https://da-hub.github.io">
+            <a class="go-to-example-page" style="color:white" href="#">
               <!-- <a class="go-to-example-page" style ="color:white" href="https://da-hub.github.io/?utm_source=analystyun-test">-->
               Adobe Analytics / Launch / Development </a></h1>
           <h4 class="mb-5">by. YHK </h4>
