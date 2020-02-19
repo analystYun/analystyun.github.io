@@ -48,7 +48,17 @@
    // pageInfo2 = {name:'testName',type:'testType',category:'testCate'}
 
    function sTrack(){ _satellite.track("commTest", {name:"testName",type:"testType",category:"testCate"} )}
-    
+
+	  
+/* 취소(refund) - eval() Test*/	  
+var dl = {
+	order_id: '주문번호',
+	trip_id: 'PNR',
+	refund_amount: 10000,
+	refund_penalty_amount: 1500,
+	refund_np_amount:'',
+	refund_penalty_np_amount: ''
+}
     
 /* jinair - 모든 페이지 공통 및 일반 페이지 로드 시*/
 var _dl = {
