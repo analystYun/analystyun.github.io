@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Hyokyeong Yun">
+  <meta name="author" content="Example Page of Google Analytics">
+
+  <title> Adobe Analytics and Launch Test Page - step6 </title>
+  
+
+  <!--Adobe Analytics / Launch / Development -->
+  <script src="//assets.adobedtm.com/ce8d64c4e8e1/4aa20ad68de5/launch-8a23a5c1aac4-development.min.js" async></script>
+
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+  <!-- Custom styles for this template -->
+  <link href="css/landing-page.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <script id="adobe-test" style=display:'none'>
+    var dataLayerEx = [];   
+    var pageInfo = {
+      name: 'adobe test page - ok',
+      type:'pageInfo.type - ok',
+      category: 'pageInfo.category - ok',
+      update: 'update - ok'
+    }
+    
+    
+/* jinair - 모든 페이지 공통 및 일반 페이지 로드 시*/
+
+var _dl = {
+  order_id : 'order_id_003',
+  trip_id : 'PNR: ICN-NRT',
+  total_revenue : 346000,
+  reissue_penalty_amount : 0,
+  refund_amount : 346000,
+  refund_penalty_amount : 80000,
+//refund_np_amount : '',
+//refund_penalty_np_amount : '',
+  
+  products : [
+    {
+      trip_category : '여정',
+      trip_type : 'RT',
+      trip_passengerNum : 2,
+      trip_passengerInfo : '2-0-0',
+      trip_segment : 'ICN-NRT|NRT-ICN',
+      trip_date : '2020.02.02|2020.03.02',
+      trip_depTime : '08:30|19:40',
+      trip_flightNumber : 'LJ001|LJ002',
+      trip_bundleName : '베이직|스마트',
+      trip_ticketPrice : '88000|121000'
+    },{
+      trip_category : '부가서비스-SEAT',
+      trip_seg_detail : 'ICN-NRT',
+      trip_seat : '29D',
+      trip_seatPrice : 7000,
+      trip_passenger : '성인1'
+    },{
+      trip_category : '부가서비스-SEAT',
+      trip_seg_detail : 'NRT-ICN',
+      trip_seat : '2A',
+      trip_seatPrice : 15000,
+      trip_passenger : '성인2'
+    },{
+      trip_category : '부가서비스-BAGGAGE',
+      trip_seg_detail : 'NRT-ICN',
+      trip_bag : '10kg',
+      trip_bagPrice : 100000,
+      trip_passenger : '성인2'
+    },{
+      trip_category : '부가서비스-MEALS',
+      trip_seg_detail : 'ICN-NRT',
+      trip_meal : '오동통쉬림프',
+      trip_mealPrice : 15000,
+      trip_passenger : '성인1'
+    }
+  ],
+  
+  // trip_id : 'PNR: ICN-BKK',
+  
+  page_event : {
+    trip_isModifyBooking : false, // 여정 수정시에만 true *NEW v1.3*
+    booking_step6 : true,
+    paid_service : false, //부가서비스만 구매한 경우 *NEW v1.2*
+ }
+}
+      
+/* jinair - END */         
+  </script>
+  
+  <!-- Navigation -->
+  <nav class="navbar navbar-light bg-light static-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+       Adobe Analytics and Launch Test Page </a>
+      <style>
+        div.relative_top {
+          position: relative;
+          left: 150px;
+        }
+
+        ;
+      </style>
+      <div class="relative_top">
+        <!--<a href="https://analystyun.github.io/dashboard">-->
+        <button type="dashboard" data-icon="arrow-r" onclick="sTrack()" data-click-area="GNB" data-click-name="대시보드" class="btn btn-primary" style="background-color:#20B2AA; border-color:#20B2AA">
+            대시보드
+          </button> 
+      </div>
+      <a class="btn btn-primary" href="https://analystyun.github.io/AdobeLaunch/index.html">Next</a>
+     
+    </div>
+  </nav>
+
+  <!-- Masthead -->
+  <header class="masthead text-white text-center">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-9 mx-auto">
+          <h1 class="mb-5">
+            <a class="go-to-example-page" style="color:white" href="#">
+              <!-- <a class="go-to-example-page" style ="color:white" href="https://da-hub.github.io/?utm_source=analystyun-test">-->
+              Adobe Analytics / Launch / Development </a></h1>
+          <h4 class="mb-5">by. YHK </h4>
+        </div>
+        <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+          <form>
+            <div class="form-row">
+              <div class="col-12 col-md-9 mb-2 mb-md-0">
+                <input type="email" class="form-control form-control-lg" placeholder="Enter your email...">
+              </div>
+              <div class="col-12 col-md-3">
+                <button type="submit" data-click-area="MAIN" data-click-name="Submit" onclick="gtag('event', 'sign_up', { method : 'githubPage' });" class="btn btn-block btn-lg btn-primary">
+                  Sign up!
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- 투표 custom dimension and metrics -->
+  <!-- Icons Grid -->
+  <section class="features-icons bg-light text-center">
+    <div class="container">
+      <div class="vote">
+        <form id="vote" action="/vote.html">
+          <div>
+            <h4> 가장 알고 싶은(혹은 어려운) 내용의 번호에 투표해 주세요. </h4><br>
+          </div>
+          <input type="radio" name="title" value="1번" onclick="gtag('event', '투표하세요', {'voteNumber': 1});">
+          Google Analytics: '이벤트' 설정하기 <br>
+          <input type="radio" name="title" value="2번" onclick="gtag('event', '투표하세요', {'voteResult' : '2번'});">
+          Google Analytics: 매출 데이터 분석하기 <br>
+          <input type="radio" name="title" value="3번" data-click-area="body" data-click-name="3번">
+          Google Analytics: 맞춤항목 활용하기 <br>
+          <input type="radio" name="title" value="4번">
+          Google Analytics: 향상된 전자상거래 설치하기 <br>
+          <input type="radio" name="title" value="5번">
+          Google Tag Manager 시작부터 응용까지(기초) <br>
+          <input type="radio" name="title" value="6번">
+          GA & Adwords: 애널리틱스와 애드워즈 200% 활용 <br>
+          <br>
+          <input type="submit" id="submit" value="제출하기" onclick="gtag('event', '제출', {'event_catagory': '제출하기'});">
+        </form><br><br><br>
+      </div>
+
+
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+            <div class="features-icons-icon d-flex">
+              <i class="icon-screen-desktop m-auto text-primary"></i>
+            </div>
+            <h3>For Your Web and App</h3>
+            <p class="lead mb-0"> Welcome to 'Analytics World' </p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+            <div class="features-icons-icon d-flex">
+              <i class="icon-layers m-auto text-primary"></i>
+            </div>
+            <h3>The Way to achieve your Business Goal</h3>
+            <p class="lead mb-0"> Log analysis </p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="features-icons-item mx-auto mb-0 mb-lg-3">
+            <div class="features-icons-icon d-flex">
+              <i class="icon-check m-auto text-primary"></i>
+            </div>
+            <h3>Marketing Results and Analysis</h3>
+            <p class="lead mb-0"> Adobe Analytics / Launch / Development </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Image Showcases -->
+  <section class="showcase">
+    <div class="container-fluid p-0">
+      <div class="row no-gutters">
+
+        <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/bg-showcase-1.jpg');"></div>
+        <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+          <h2> Adobe Analytics / Launch / Development</h2>
+          <br>
+          <h5> 1:1 사이트 맞춤 강의 / 활용 </h5>
+          <br>
+          <p class="lead mb-0">  1:1 사이트 맞춤 강의 / 활용 </p>
+        </div>
+      </div>
+      <div class="row no-gutters">
+        <div class="col-lg-6 text-white showcase-img" style="background-image: url('img/bg-showcase-2.jpg');"></div>
+        <div class="col-lg-6 my-auto showcase-text">
+          <h2>Marketing Results and Analysis</h2>
+          <p class="lead mb-0">온라인 마케팅 효율 분석을 통한 ROI 300% 향상</p>
+          <br>
+          <p>비즈니스 목표달성을 위해  '선택'이 아닌 '필수'입니다.</p>
+        </div>
+      </div>
+      <div class="row no-gutters" style="display: none">
+        <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/bg-showcase-3.jpg');"></div>
+        <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+          <h2>Easy to Use &amp; Customize</h2>
+          <p class="lead mb-0">Landing Page is just HTML and CSS with a splash of SCSS for users who demand some deeper customization options. Out of the box, just add your content and images, and your new landing page will be ready to go!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="test" style="display:none">
+    <!-- Testimonials -->
+    <section class="testimonials text-center bg-light">
+      <div class="container">
+        <h2 class="mb-5">What people are saying...</h2>
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+              <img class="img-fluid rounded-circle mb-3" src="img/testimonials-1.jpg" alt="">
+              <h5>Margaret E.</h5>
+              <p class="font-weight-light mb-0">"This is fantastic! Thanks so much guys!"</p>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+              <img class="img-fluid rounded-circle mb-3" src="img/testimonials-2.jpg" alt="">
+              <h5>Fred S.</h5>
+              <p class="font-weight-light mb-0">"Bootstrap is amazing. I've been using it to create lots of super nice landing pages."</p>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+              <img class="img-fluid rounded-circle mb-3" src="img/testimonials-3.jpg" alt="">
+              <h5>Sarah W.</h5>
+              <p class="font-weight-light mb-0">"Thanks so much for making these free resources available to us!"</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+
+  <!-- Call to Action -->
+  <section class="call-to-action text-white text-center">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-9 mx-auto">
+          <h2 class="mb-4">Ready to get started? Sign up now!</h2>
+        </div>
+        <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+          <form>
+            <div class="form-row">
+              <div class="col-12 col-md-9 mb-2 mb-md-0">
+                <input type="email" class="form-control form-control-lg" placeholder="테스트 페이지입니다.">
+              </div>
+              <div class="col-12 col-md-3">
+                <button type="submit" class="btn btn-block btn-lg btn-primary" onclick="gtag('event', 'PDF Downloads Test', { method : 'githubPage' });">
+                  <a style="color:white" href="#" onClick="gtag('event', 'PDF Downloads',{'event_category': 'Ebook','event_label': 'Download','value': 1});">
+                    Free eBook</a></button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+          <ul class="list-inline mb-2">
+            <li class="list-inline-item">
+              <a href="#">About</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="#">Contact</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="#">Terms of Use</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="#">Privacy Policy</a>
+            </li>
+          </ul>
+          <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2018. All Rights Reserved.</p>
+        </div>
+        <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item mr-3">
+              <a href="#">
+                <i class="fa fa-facebook fa-2x fa-fw"></i>
+              </a>
+            </li>
+            <li class="list-inline-item mr-3">
+              <a href="#">
+                <i class="fa fa-twitter fa-2x fa-fw"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <i class="fa fa-instagram fa-2x fa-fw"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
