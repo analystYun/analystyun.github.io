@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Hyokyeong Yun">
+  <meta name="author" content="Example Page of Google Analytics">
+
+  <title> Adobe Analytics and Launch Test Page </title>
+  
+
+  <!--Adobe Analytics / Launch / Development -->
+  <script src="//assets.adobedtm.com/ce8d64c4e8e1/4aa20ad68de5/launch-8a23a5c1aac4-development.min.js" async></script>
+
+  <!-- PostHog Analytics -->
+  <script>
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+    posthog.init('phc_lbIJhfMh3j4K1qoB7yntdb01PkMDYLCKMD6AAhQT1OH',{api_host:'https://app.posthog.com'})
+  </script>	
+
+  <!--  Mixpanel  -->
+  <script type="text/javascript">
+    (function(f,b){if(!b.__SV){var e,g,i,h;window.mixpanel=b;b._i=[];b.init=function(e,f,c){function g(a,d){var b=d.split(".");2==b.length&&(a=a[b[0]],d=b[1]);a[d]=function(){a.push([d].concat(Array.prototype.slice.call(arguments,0)))}}var a=b;"undefined"!==typeof c?a=b[c]=[]:c="mixpanel";a.people=a.people||[];a.toString=function(a){var d="mixpanel";"mixpanel"!==c&&(d+="."+c);a||(d+=" (stub)");return d};a.people.toString=function(){return a.toString(1)+".people (stub)"};i="disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking start_batch_senders people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split(" ");
+    for(h=0;h<i.length;h++)g(a,i[h]);var j="set set_once union unset remove delete".split(" ");a.get_group=function(){function b(c){d[c]=function(){call2_args=arguments;call2=[c].concat(Array.prototype.slice.call(call2_args,0));a.push([e,call2])}}for(var d={},e=["get_group"].concat(Array.prototype.slice.call(arguments,0)),c=0;c<j.length;c++)b(j[c]);return d};b._i.push([e,f,c])};b.__SV=1.2;e=f.createElement("script");e.type="text/javascript";e.async=!0;e.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?
+    MIXPANEL_CUSTOM_LIB_URL:"file:"===f.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";g=f.getElementsByTagName("script")[0];g.parentNode.insertBefore(e,g)}})(document,window.mixpanel||[]);
+
+    // Enabling the debug mode flag is useful during implementation,
+    // but it's recommended you remove it for production
+    mixpanel.init('cd2d33c3545ee2cd680a35df2e3876fc', {debug: true}); 
+//     mixpanel.track('Sign Up', {
+//       'source': "Pat's affiliate site",
+//       'Opted out of email': true,
+//     });
+
+  </script>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+  <!-- Custom styles for this template -->
+  <link href="css/landing-page.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <script id="adobe-test" style=display:'none'>
+    var dataLayerEx = [];   
+    var pageInfo = {
+      name: 'adobe test page - ok',
+      type:'pageInfo.type - ok',
+      category: 'pageInfo.category - ok',
+      update: 'update - ok'
+    }
+
+    var hkObj = {
+      event: 'Page Loaded',
+      pageInfo : pageInfo
+    }
+    
+    dataLayerEx.push(hkObj)
+    
+   // pageInfo2 = {name:'testName',type:'testType',category:'testCate'}
+
+   function sTrack(){ _satellite.track("commTest", {name:"testName",type:"testType",category:"testCate"} )}
+
+	  
+/* 취소(refund) - eval() Test*/	  
+var dl = {
+	order_id: '주문번호',
+	trip_id: 'PNR',
+	refund_amount: 10000,
+	refund_penalty_amount: 1500,
+	refund_np_amount:'',
+	refund_penalty_np_amount: ''
+}
+    
+/* jinair - 모든 페이지 공통 및 일반 페이지 로드 시*/
+var isiFrame //= false
+var _dl = {
+	site_name : 'Jin Air', // 사이트명, 고정
+	channel : '유입접속채널명', //예시) pc|mobile|app
+	page_name : '페이지명', // *PageName 파일 참고 예시) Promotion^Main/ depth구분은 "^"로 구분
+	page_url : '페이지URL',
+	site_currency : '고객 설정값에 따른 환종', // 예시) KRW
+	site_region : '고객 설정값에 따른 접속 지역', // 예시) 한국
+	site_language : '고객 설정값에 따른 언어', // 예시) KOR
+	visitor_Id : 'Adobe 발행 Visitor ID', // 로그에 기록되는 Adobe ID
+	visit_type : 'Adobe ID 값 유/무에 따른 재방문 여부', // 예시) 신규방문 = New, 재방문 = Return
+	login_status : '로그인상태', // 예시) "Y"(로그인) | "N"(로그아웃)
+	login_type : '로그인 유형', // 로그인시 사용한 로그인 유형, normal(일반), facebook, naver, google, linkdin
+	user_number : '고객고유번호', // 암호화 처리(Non PII)
+	user_gender : '고객성별', //예시) M|F, 있는 경우만 입력
+	user_age : '고객연령', // 숫자로 기입, 있는 경우만 입력
+	user_nationality : '고객국적', // 예시) KOR , 로그인 이후 모든 페이지 (값이 있는 경우)
+	user_level :"고객 멤버십 유형", // 예시) 회원등급_유료회원권 으로 입력, 유료회원권이 없을 시 공백으로 처리 ex) '회원등급_'
+
+
+	page_event : {
+	user_login : true,	// Login 첫 페이지에만 추가
+	},
+
+	page_event : {
+	user_logout : true,	// Logout 클릭 후 첫 페이지에만 추가
+	},
+
+     	order_id : '구매 승인번호', // 구매 승인/취소시 사용되는 값
+        trip_id : 'PNR 값', // 암호화된 PNR 데이터
+        payment_method : '결제방식', // 예시) 신용카드 | 나비포인트, * 동시 사용되는 경우 '|'로 결제 수단을 나열함.
+        total_revenue : '320000', // 실 결제금액 (전체 금액합계-할인금액)
+
+        discount_amount : '30000',
+        discount_type : '할인유형', // 예시) '카드제휴 할인 | 나비포인트', 중복할인 적용일 경우 '|'로 구분함.
+        discount_np_amount : '5400 | 2000', // 사용 나비포인트(NP) 예시)'5400 | 2000', 편도는 '5400|' 입력, 리턴부분 공백으로 처리
+        discount_np_price : '54000 | 20000', // 나비포인트 사용 금액(원) 예시)'54000 | 20000', 편도는 '54000 |' 입력, 리턴부분 공백으로 처리
+	discount_couponName : '할인 쿠폰명',
+	
+        products : [
+            {
+                trip_category : '여정',  // 예시) 여정-동남아
+                trip_type : '왕복', // 여정 타입 - 왕복/편도/다구간
+                trip_passengerNum : '3', // 전체탑승객 수 숫자
+                trip_passengerInfo : '성인2,소아1,유아0', // 탑승객 정보 예시) 탑승객 - 성인2,소아1,유아0 -> '2-1-0' 값 입력
+                trip_segment : 'ICN-BKK | BKK-ICN', // 여정 구간 예시) 왕복일 경우: ICN-BKK | BKK-ICN, 편도일 경우: 'ICN-BKK |' 입력, 리턴부분 공백으로 처리
+                trip_date :'2020.01.01 | 2020.01.07', // 여정일자 예시) 2020.01.01 | 2020.01.07, 편도는 '2020.01.01 |' 입력, 리턴부분 공백으로 처리
+                trip_region : 'KOR-SEA', // 여정 대노선 예시) KOR-SEA | SEA-KOR, 편도는 'KOR-SEA |' 입력, 리턴부분 공백으로 처리 / 대노선 (한국:KOR, 동남아시아:SEA, 동북아시아: NEA, 대양주:OCE, 미주: NA)
+                trip_depTime : '08:30 | 19:40', // 현지 출발시간 예시) 08:30 | 19:40, 편도는 '08:30 |' 입력, 리턴부분 공백으로 처리
+                trip_flightNumber : 'LJ301 | LJ302', // 편명 예시) LJ301 | LJ302, 편도는 'LJ301 |' 입력, 리턴부분 공백으로 처리
+                trip_bookingClass : 'P-슈퍼로우 | Q-플렉스', // 예시) P-슈퍼로우 | Q-플렉스, 알파벳: 좌석클래스 / 슈퍼로우: 운임명칭
+                trip_bundleName : '베이직 | 스마트', // 예시) 베이직 | 스마트, 번들종류 (step2, 이름기준)
+                trip_bundlePrice : '7000 | 30000', // 번들 금액 예시) '7000 | 30000', 편도는 '7000 |' 입력, 리턴부분 공백으로 처리
+                trip_ticketPrice: '140000 | 120000', // 구간별 항공운임 예시) '140000 | 120000', 편도는 '140000 |' 입력, 리턴부분 공백으로 처리
+		trip_fuelSurcharge : '10600 | 10600', // 예시) '10600 | 10600', 편도는 '10600 |' 입력, 리턴부분 공백으로 처리
+		trip_tax : '30000 | 29100', // 예시) '30000 | 29100', 편도는 '30000 |' 입력, 리턴부분 공백으로 처리           
+		trip_purchase_channel : 'Y',
+		trip_isModifyBooking : true,
+		reissue_penalty : '50000|50000' // 재발행 
+	},{
+                /* 예시 : 성인2명, ICN-BKK 왕복 여정, 부가서비스 좌석/수화물/기내식 추가 경우 (그 외는 가이드 참고) */
+
+                // 예시 - 부가서비스 - 좌석정보
+                trip_category : '부가서비스-SEAT', // 여정카테고리 = 부가서비스-SEAT
+                trip_seg_detail : 'ICN-BKK', // 여정상세
+                trip_seat : '29D',   // 좌석번호
+                trip_seatPrice : 15000, // 좌석 추가금액, 번들 선택하거나 금액이 없을경우 '0'으로 처리
+                trip_passenger : '성인1'  // 승객 상세
+            },{
+                // 예시 - 부가서비스 - 좌석정보
+                trip_category : '부가서비스-SEAT', // 여정카테고리 = 부가서비스-SEAT
+                trip_seg_detail : 'ICN-BKK', // 여정상세
+                trip_seat : '29E',   // 좌석번호
+                trip_seatPrice : 15000, // 좌석 추가금액, 번들 선택하거나 금액이 없을경우 '0'으로 처리
+                trip_passenger : '성인2'  // 승객 상세
+            },{
+                // 예시 - 부가서비스 - 좌석정보
+                trip_category : '부가서비스-SEAT', // 여정카테고리 = 부가서비스-SEAT
+                trip_seg_detail : 'BKK-ICN', // 여정상세
+                trip_seat : '44C',   // 좌석번호
+                trip_seatPrice : 0, // 좌석 추가금액, 번들 선택하거나 금액이 없을경우 '0'으로 처리
+                trip_passenger : '성인1'  // 승객 상세
+            },{
+                // 예시 - 부가서비스 - 좌석정보
+                trip_category : '부가서비스-SEAT', // 여정카테고리 = 부가서비스-SEAT
+                trip_seg_detail : 'BKK-ICN', // 여정상세
+                trip_seat : '44B',   // 좌석번호
+                trip_seatPrice : 0, // 좌석 추가금액, 번들 선택하거나 금액이 없을경우 '0'으로 처리
+                trip_passenger : '성인2'  // 승객 상세
+            },{
+                // 예시 - 부가서비스 - 수화물 추가
+                trip_category : '부가서비스-BAGGAGE', // 여정카테고리 = 부가서비스-BAG
+                trip_seg_detail : 'BKK-ICN', // 여정상세
+                trip_bag : '5KG', // 수화물 추가 내용
+                trip_bagPrice : 35000, // 수화물 추가시 발생 금액
+                trip_passenger : '성인2' // 수화물 추가 승객
+            },{
+                // 예시 - 부가서비스 - 기내식 추가
+                trip_category : '부가서비스-MEALS', // 여정카테고리 = 부가서비스-MEAL
+                trip_seg_detail : 'BKK-ICN', // 여정상세
+                trip_meal : '오동통 쉬림프 샐러드', // 기내식 추가 내용
+                trip_mealPrice : 11000, // 기내식 추가시 발생 금액
+                trip_passenger : '성인1' // 기내식 추가 승객
+            }
+        ],
+
+        page_event : {
+            booking_step6 : true
+        }
+    }
+      
+/* jinair - END */         
+  </script>
+  
+  <!-- Navigation -->
+  <nav class="navbar navbar-light bg-light static-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+       Adobe Analytics and Launch Test Page </a>
+      <style>
+        div.relative_top {
+          position: relative;
+          left: 150px;
+        }
+
+        ;
+      </style>
+      <div class="relative_top">
+        <!--<a href="https://analystyun.github.io/dashboard">-->
+        <button type="dashboard" data-icon="arrow-r" onclick="sTrack()" data-click-area="GNB" data-click-name="대시보드" class="btn btn-primary" style="background-color:#20B2AA; border-color:#20B2AA">
+            대시보드
+          </button> 
+      </div>
+      <a class="btn btn-primary" href="https://analystyun.github.io/AdobeLaunch/index.html">Next</a>
+     
+    </div>
+  </nav>
+
+  <!-- Masthead -->
+  <header class="masthead text-white text-center">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-9 mx-auto">
+          <h1 class="mb-5">
+            <a class="go-to-example-page" style="color:white" href="#" data-attr='postHog test'>
+              <!-- <a class="go-to-example-page" style ="color:white" href="https://da-hub.github.io/?utm_source=analystyun-test">-->
+              Adobe Analytics / Launch / Development </a></h1>
+          <h4 class="mb-5">by. YHK </h4>
+        </div>
+        <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+          <form>
+            <div class="form-row">
+              <div class="col-12 col-md-9 mb-2 mb-md-0">
+                <input type="email" class="form-control form-control-lg" placeholder="Enter your email...">
+              </div>
+              <div class="col-12 col-md-3">
+                <button type="submit" data-click-area="MAIN" data-click-name="Submit" onclick="gtag('event', 'sign_up', { method : 'githubPage' });" class="btn btn-block btn-lg btn-primary">
+                  Sign up!
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- 투표 custom dimension and metrics -->
+  <!-- Icons Grid -->
+  <section class="features-icons bg-light text-center">
+    <div class="container">
+      <div class="vote">
+        <form id="vote" action="/vote.html">
+          <div>
+            <h4> 가장 알고 싶은(혹은 어려운) 내용의 번호에 투표해 주세요. </h4><br>
+          </div>
+          <input type="radio" name="title" value="1번" onclick="gtag('event', '투표하세요', {'voteNumber': 1});">
+          Google Analytics: '이벤트' 설정하기 <br>
+          <input type="radio" name="title" value="2번" onclick="gtag('event', '투표하세요', {'voteResult' : '2번'});">
+          Google Analytics: 매출 데이터 분석하기 <br>
+          <input type="radio" name="title" value="3번" data-click-area="body" data-click-name="3번">
+          Google Analytics: 맞춤항목 활용하기 <br>
+          <input type="radio" name="title" value="4번">
+          Google Analytics: 향상된 전자상거래 설치하기 <br>
+          <input type="radio" name="title" value="5번">
+          Google Tag Manager 시작부터 응용까지(기초) <br>
+          <input type="radio" name="title" value="6번">
+          GA & Adwords: 애널리틱스와 애드워즈 200% 활용 <br>
+          <br>
+          <input type="submit" id="submit" value="제출하기" onclick="gtag('event', '제출', {'event_catagory': '제출하기'});">
+        </form><br><br><br>
+      </div>
+
+
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+            <div class="features-icons-icon d-flex">
+              <i class="icon-screen-desktop m-auto text-primary"></i>
+            </div>
+            <h3>For Your Web and App</h3>
+            <p class="lead mb-0"> Welcome to 'Analytics World' </p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+            <div class="features-icons-icon d-flex">
+              <i class="icon-layers m-auto text-primary"></i>
+            </div>
+            <h3>The Way to achieve your Business Goal</h3>
+            <p class="lead mb-0"> Log analysis </p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="features-icons-item mx-auto mb-0 mb-lg-3">
+            <div class="features-icons-icon d-flex">
+              <i class="icon-check m-auto text-primary"></i>
+            </div>
+            <h3>Marketing Results and Analysis</h3>
+            <p class="lead mb-0"> Adobe Analytics / Launch / Development </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Image Showcases -->
+  <section class="showcase">
+    <div class="container-fluid p-0">
+      <div class="row no-gutters">
+
+        <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/bg-showcase-1.jpg');"></div>
+        <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+          <h2> Adobe Analytics / Launch / Development</h2>
+          <br>
+          <h5> 1:1 사이트 맞춤 강의 / 활용 </h5>
+          <br>
+          <p class="lead mb-0">  1:1 사이트 맞춤 강의 / 활용 </p>
+        </div>
+      </div>
+      <div class="row no-gutters">
+        <div class="col-lg-6 text-white showcase-img" style="background-image: url('img/bg-showcase-2.jpg');"></div>
+        <div class="col-lg-6 my-auto showcase-text">
+          <h2>Marketing Results and Analysis</h2>
+          <p class="lead mb-0">온라인 마케팅 효율 분석을 통한 ROI 300% 향상</p>
+          <br>
+          <p>비즈니스 목표달성을 위해  '선택'이 아닌 '필수'입니다.</p>
+        </div>
+      </div>
+      <div class="row no-gutters" style="display: none">
+        <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/bg-showcase-3.jpg');"></div>
+        <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+          <h2>Easy to Use &amp; Customize</h2>
+          <p class="lead mb-0">Landing Page is just HTML and CSS with a splash of SCSS for users who demand some deeper customization options. Out of the box, just add your content and images, and your new landing page will be ready to go!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="test" style="display:none">
+    <!-- Testimonials -->
+    <section class="testimonials text-center bg-light">
+      <div class="container">
+        <h2 class="mb-5">What people are saying...</h2>
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+              <img class="img-fluid rounded-circle mb-3" src="img/testimonials-1.jpg" alt="">
+              <h5>Margaret E.</h5>
+              <p class="font-weight-light mb-0">"This is fantastic! Thanks so much guys!"</p>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+              <img class="img-fluid rounded-circle mb-3" src="img/testimonials-2.jpg" alt="">
+              <h5>Fred S.</h5>
+              <p class="font-weight-light mb-0">"Bootstrap is amazing. I've been using it to create lots of super nice landing pages."</p>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+              <img class="img-fluid rounded-circle mb-3" src="img/testimonials-3.jpg" alt="">
+              <h5>Sarah W.</h5>
+              <p class="font-weight-light mb-0">"Thanks so much for making these free resources available to us!"</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+
+  <!-- Call to Action -->
+  <section class="call-to-action text-white text-center">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-9 mx-auto">
+          <h2 class="mb-4">Ready to get started? Sign up now!</h2>
+        </div>
+        <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+          <form>
+            <div class="form-row">
+              <div class="col-12 col-md-9 mb-2 mb-md-0">
+                <input type="email" class="form-control form-control-lg" placeholder="테스트 페이지입니다.">
+              </div>
+              <div class="col-12 col-md-3">
+                <button type="submit" class="btn btn-block btn-lg btn-primary" onclick="gtag('event', 'PDF Downloads Test', { method : 'githubPage' });">
+                  <a style="color:white" href="#" onClick="gtag('event', 'PDF Downloads',{'event_category': 'Ebook','event_label': 'Download','value': 1});">
+                    Free eBook</a></button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+          <ul class="list-inline mb-2">
+            <li class="list-inline-item">
+              <a href="#">About</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="#">Contact</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="#">Terms of Use</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="#">Privacy Policy</a>
+            </li>
+          </ul>
+          <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2018. All Rights Reserved.</p>
+        </div>
+        <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item mr-3">
+              <a href="#">
+                <i class="fa fa-facebook fa-2x fa-fw"></i>
+              </a>
+            </li>
+            <li class="list-inline-item mr-3">
+              <a href="#">
+                <i class="fa fa-twitter fa-2x fa-fw"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <i class="fa fa-instagram fa-2x fa-fw"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
